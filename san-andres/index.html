@@ -76,7 +76,7 @@ body::before { display: none; }
 }
 .search-box input::placeholder { color: var(--muted); }
 .search-box input:focus { border-color: var(--gold); }
-.search-box::before { content: '??'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; pointer-events: none; }
+.search-box::before { content: '🔍'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; pointer-events: none; }
 .cats-scroll { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .cats-scroll::-webkit-scrollbar { display: none; }
 .cat-pill {
@@ -478,12 +478,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="cats-scroll">
       <div class="cat-pill active" onclick="setFilter('todos',this)">Todos</div>
-      <div class="cat-pill" onclick="setFilter('bares',this)">?? Bares</div>
+      <div class="cat-pill" onclick="setFilter('bares',this)">🍺 Bares</div>
       <div class="cat-pill" onclick="setFilter('cafe',this)">? Cafés</div>
-      <div class="cat-pill" onclick="setFilter('comida',this)">?? Comida</div>
-      <div class="cat-pill" onclick="setFilter('plan',this)">?? Planes</div>
-      <div class="cat-pill" onclick="setFilter('arte',this)">?? Arte</div>
-      <div class="cat-pill" onclick="setFilter('noche',this)">?? Noche</div>
+      <div class="cat-pill" onclick="setFilter('comida',this)">🍽️ Comida</div>
+      <div class="cat-pill" onclick="setFilter('plan',this)">🎯 Planes</div>
+      <div class="cat-pill" onclick="setFilter('arte',this)">🎨 Arte</div>
+      <div class="cat-pill" onclick="setFilter('noche',this)">🌙 Noche</div>
     </div>
   </div>
 
@@ -491,7 +491,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="screen active" id="screen-inicio">
     <div class="banner" id="banner-eventos">
       <div class="banner-header" onclick="toggleBanner()">
-        <div class="banner-flame">??</div>
+        <div class="banner-flame">🔥</div>
         <div class="banner-texto">
           <h3>¿Qué hacer esta noche?</h3>
           <p>Eventos programados para el mes</p>
@@ -542,7 +542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- BOTON REGISTRO -->
 <div class="wa-float">
   <a class="wa-btn" href="https://elpracheadmin.github.io/elparche-admin/admintaller/" style="text-decoration:none;">
-    <span class="wa-btn-icon">??</span>
+    <span class="wa-btn-icon">📱</span>
     <span class="wa-btn-text">Registra tu local</span>
   </a>
 </div>
@@ -679,11 +679,11 @@ const places = [
 // EVENTOS
 // --------------------------------------
 const eventList = [
-  { date:'2026-07-20', endDate:'2026-07-22', cat:'arte', icon:'??', name:'Festival de la Cosecha del Coco', nit:'', place:'San Luis', price:'Entrada libre', short:'20-22 de julio' },
-  { date:'2026-08-15', endDate:'2026-08-17', cat:'comida', icon:'??', name:'Festival Gastronomico Isleno', nit:'', place:'Centro', price:'Variable', short:'15-17 de agosto' },
-  { date:'2026-09-10', endDate:'2026-09-12', cat:'arte', icon:'??', name:'Feria Artesanal de San Andres', nit:'', place:'Centro', price:'Entrada libre', short:'10-12 de septiembre' },
+  { date:'2026-07-20', endDate:'2026-07-22', cat:'arte', icon:'🎨', name:'Festival de la Cosecha del Coco', nit:'', place:'San Luis', price:'Entrada libre', short:'20-22 de julio' },
+  { date:'2026-08-15', endDate:'2026-08-17', cat:'comida', icon:'🍽️', name:'Festival Gastronomico Isleno', nit:'', place:'Centro', price:'Variable', short:'15-17 de agosto' },
+  { date:'2026-09-10', endDate:'2026-09-12', cat:'arte', icon:'🎨', name:'Feria Artesanal de San Andres', nit:'', place:'Centro', price:'Entrada libre', short:'10-12 de septiembre' },
   { date:'2026-10-05', endDate:'2026-10-07', cat:'plan', icon:'??', name:'Torneo de Pesca Deportiva', nit:'', place:'Spratt Bight', price:'$50.000', short:'5-7 de octubre' },
-  { date:'2026-07-20', endDate:'2026-07-22', cat:'arte', icon:'??', name:'Festival del Coco', nit:'', place:'San Luis', price:'Entrada libre', short:'20-22 de julio' },
+  { date:'2026-07-20', endDate:'2026-07-22', cat:'arte', icon:'🎨', name:'Festival del Coco', nit:'', place:'San Luis', price:'Entrada libre', short:'20-22 de julio' },
 ];
 
 function getUpcomingEvents() {
@@ -709,9 +709,9 @@ function renderEventsList(list) {
       <div class="ev-thumb-full ${etClasses[i % 5]}">${e.icon}<div class="ev-badge-full dia">${meses[m]}</div></div>
       <div class="ev-info-full">
         <h3>${e.name}</h3>
-        <div class="ev-detail-row"><span>??</span> ${e.short}</div>
-        <div class="ev-detail-row"><span>??</span> ${e.place}</div>
-        <div class="ev-detail-row"><span>??</span> ${e.price}</div>
+        <div class="ev-detail-row"><span>📅</span> ${e.short}</div>
+        <div class="ev-detail-row"><span>📍</span> ${e.place}</div>
+        <div class="ev-detail-row"><span>💰</span> ${e.price}</div>
       </div>`;
     feed.appendChild(card);
   });
@@ -818,7 +818,7 @@ function makePlaceCard(p, i) {
     <div class="place-info">
       <h3>${p.name}</h3>
       <div class="place-tags">${p.tags.map(t=>`<span class="p-tag">${t}</span>`).join('')}</div>
-      <div class="place-barrio">?? ${p.barrio}</div>
+      <div class="place-barrio">📍 ${p.barrio}</div>
     </div>`;
   d.addEventListener('click', e => { if(!e.target.closest('.heart-btn')) openModal(p); });
   return d;
@@ -860,7 +860,7 @@ function updateMapPins() {
       html:`<div style="background:#1C1508;border:2px solid #1A78C8;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.5);"><svg viewBox="0 0 80 80" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">${getSVG(p.cat)}</svg></div>`,
       className:'', nit:'', iconSize:[36,36], iconAnchor:[18,18]
     });
-    const marker = L.marker(p.coords,{icon}).addTo(leafMap).bindPopup(`<div class="popup-name">${p.name}</div><div class="popup-barrio">?? ${p.barrio}</div>`);
+    const marker = L.marker(p.coords,{icon}).addTo(leafMap).bindPopup(`<div class="popup-name">${p.name}</div><div class="popup-barrio">📍 ${p.barrio}</div>`);
     mapMarkers.push(marker);
   });
 }
@@ -902,7 +902,7 @@ function openModal(p) {
   document.getElementById('modal-title').textContent = p.name;
   document.getElementById('modal-tags').innerHTML = p.tags.map(t=>`<span class="m-tag">${t}</span>`).join('');
   document.getElementById('modal-desc').textContent = p.desc;
-  document.getElementById('modal-barrio').innerHTML = `?? ${p.barrio}`;
+  document.getElementById('modal-barrio').innerHTML = `📍 ${p.barrio}`;
 
   const full = Math.floor(p.rating);
   const starsHtml = Array.from({length:5},(_,i)=>`<i class="star fa${i<full?'s':'r'} fa-star ${i<full?'on':'off'}"></i>`).join('');
@@ -913,8 +913,8 @@ function openModal(p) {
     <div class="detail-box"><div class="d-label">Precio</div><div class="d-val">${p.precio}</div></div>`;
 
   let infoHtml = '';
-  if (p.telefono) infoHtml += `<div class="info-line"><span>??</span> <span style="cursor:pointer;color:var(--gold);" onclick="navigator.clipboard.writeText('${p.telefono}');this.innerText='¡Copiado!';">${p.telefono}</span></div>`;
-  if (p.instagram) infoHtml += `<div class="info-line"><span>??</span> <a href="https://instagram.com/${p.instagram}" target="_blank" style="color:var(--gold);text-decoration:none;">@${p.instagram}</a></div>`;
+  if (p.telefono) infoHtml += `<div class="info-line"><span>ℹ️</span> <span style="cursor:pointer;color:var(--gold);" onclick="navigator.clipboard.writeText('${p.telefono}');this.innerText='¡Copiado!';">${p.telefono}</span></div>`;
+  if (p.instagram) infoHtml += `<div class="info-line"><span>📸</span> <a href="https://instagram.com/${p.instagram}" target="_blank" style="color:var(--gold);text-decoration:none;">@${p.instagram}</a></div>`;
   document.getElementById('modal-info').innerHTML = infoHtml;
 
   if (p.menu && p.menu.some(it => it)) {
